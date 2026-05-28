@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TransactionsViewController.swift
 //  WalletApp
 //
 //  Created by Vasif Mehdizada on 28.05.26.
@@ -7,10 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+final class TransactionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .purple
     }
 }

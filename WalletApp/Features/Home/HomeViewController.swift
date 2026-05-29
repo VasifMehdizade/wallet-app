@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 final class HomeViewController: WViewController<HomeViewFactory, HomeViewModel> {
     
@@ -19,17 +20,14 @@ final class HomeViewController: WViewController<HomeViewFactory, HomeViewModel> 
     }()
     
     override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            view.backgroundColor = .green
-            
-            view.addSubview(button)
-            
-        button.translatesAutoresizingMaskIntoConstraints = false
-            
-            NSLayoutConstraint.activate([
-                button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-                button.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            ])
+        super.viewDidLoad()
+        
+        view.backgroundColor = .green
+        
+        view.addSubview(button)
+        
+        button.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
+    }
 }

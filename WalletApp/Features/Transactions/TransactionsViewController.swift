@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class TransactionsViewController: UIViewController {
+final class TransactionsViewController: WViewController<TransactionsViewFactory, TransactionsViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .purple

@@ -10,18 +10,22 @@ import UIKit
 class TabbarCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     
-    var navigationController: UINavigationController
+    private let tabBarController: MainTabbarController
+    public var router: UINavigationController
 
     var children: [Coordinator] = []
     
     init(
-        navigationController: UINavigationController
+        router : UINavigationController
     ) {
-        self.navigationController = navigationController
+        self.router = router
+        self.tabBarController = MainTabbarController()
     }
     
     func start() {
-        let tabbar = MainTabbarController()
-        navigationController.pushViewController(tabbar, animated: false)
+        tabBarController.viewControllers = children.map {$0.router as UIViewController}
+        router.pushViewController(tabBarController, animated: false)
+        children.forEach({$0.start()})
+        parentCoordinator?.children.append(self)
     }
 }

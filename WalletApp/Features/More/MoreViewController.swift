@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MoreViewController: UIViewController {
+final class MoreViewController: WViewController<MoreViewFactory, MoreViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class StatisticsViewController: UIViewController {
+final class StatisticsViewController: WViewController<StatisticsViewFactory, StatisticsViewModel> {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
